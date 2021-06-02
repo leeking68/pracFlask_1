@@ -1,5 +1,5 @@
 from flask import Flask, render_template,request, redirect, url_for
-import sys
+import sys, database
 
 application = Flask(__name__)
 
@@ -17,12 +17,20 @@ def photo_apply():
     cleaness = request.args.get("clean")
     built = request.args.get("built")
     print(location, cleaness, built)
+
+    if cleaness == None:
+        cleaness = False
+    else:
+        cleaness == True
+
+    database.save(location,cleaness,built)
+
     return render_template("apply_photo.html")
 
 @application.route("/upload_done" , methods=["POST"])
 def upload_done():
     uploaded_files = request.files["file"]
-    uploaded_files.save("static/img/{}.jpeg".format(1))
+    uploaded_files.save("static/img/{}.jpeg".format(database.now_index()))
     return redirect(url_for("hello")) #hello 라는 함수에 보낼거다 
 
 
