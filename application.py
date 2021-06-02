@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request
+from flask import Flask, render_template,request, redirect, url_for
 import sys
 
 application = Flask(__name__)
@@ -16,8 +16,15 @@ def photo_apply():
     location = request.args.get("location")
     cleaness = request.args.get("clean")
     built = request.args.get("built")
-    # return render_template("apply.html")
     print(location, cleaness, built)
+    return render_template("apply_photo.html")
+
+@application.route("/upload_done" , methods=["POST"])
+def upload_done():
+    uploaded_files = request.files["file"]
+    uploaded_files.save("static/img/{}.jpeg".format(1))
+    return redirect(url_for("hello")) #hello 라는 함수에 보낼거다 
+
 
 @application.route("/list")
 def list():
