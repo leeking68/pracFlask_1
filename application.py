@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,request
 import sys
 
 application = Flask(__name__)
@@ -11,6 +11,13 @@ def hello():
 def apply():
     return render_template("apply.html")
 
+@application.route("/applyphoto")
+def photo_apply():
+    location = request.args.get("location")
+    cleaness = request.args.get("clean")
+    built = request.args.get("built")
+    # return render_template("apply.html")
+    print(location, cleaness, built)
 
 @application.route("/list")
 def list():
