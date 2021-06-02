@@ -9,12 +9,12 @@ def hello():
 
 @application.route("/apply")
 def hello():
-    return render_template("hello.html")
+    return render_template("apply.html")
 
 
 @application.route("/list")
 def hello():
-    return render_template("hello.html")
+    return render_template("list.html")
 
 
 if __name__ == "__main__":
