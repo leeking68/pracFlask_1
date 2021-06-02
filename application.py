@@ -8,12 +8,12 @@ def hello():
     return render_template("hello.html")
 
 @application.route("/apply")
-def hello():
+def apply():
     return render_template("apply.html")
 
 
 @application.route("/list")
-def hello():
+def list():
     return render_template("list.html")
 
 
