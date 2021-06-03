@@ -48,7 +48,8 @@ def house_info(index):
     location = house_info["location"]
     cleaness = house_info["cleaness"]
     built_in = house_info["built_in"]
+    photo = f"img/{index}.jpeg"
     print(location, cleaness, built_in)
-    return render_template("house_info.html", location = location, cleaness = cleaness, built_in = built_in)
+    return render_template("house_info.html", location = location, cleaness = cleaness, built_in = built_in,photo=photo) #앞은 html 뒤는 여기
 if __name__ == "__main__":
     application.run(host='0.0.0.0')

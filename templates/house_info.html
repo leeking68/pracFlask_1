@@ -1,4 +1,6 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>등록한 집 세부 내용</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-widthm, initial-scale=1.0">
+<title>등록한 집 세부 내용</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -626,4 +628,12 @@ blockquote {
 }
 	
 </style></head><body><article id="065bf234-c5ea-4676-a3e6-da9556ca8dfc" class="page sans"><header><h1 class="page-title">등록한 집 세부 내용</h1></header><div class="page-body"><p id="111396b2-c144-4099-8a19-4172ad3f4741" class="">
-</p><p id="006ed9a0-e763-4886-a2d5-db7e64ea15d8" class="">집 위치 - {{location}}</p><p id="1cecb1f8-a24e-433c-a2cd-49f9907a2c44" class="">청결도 - {% if cleaness == True%}}★{% else %}☆{% endif %}</p><p id="5bfb2cd9-40ae-45cf-aabd-1c27cbb127b7" class="">빌트인 항목 - {{built_in}}</p></div></article></body></html>
+</p><p id="006ed9a0-e763-4886-a2d5-db7e64ea15d8" class="">집 위치 - {{location}}</p><p id="1cecb1f8-a24e-433c-a2cd-49f9907a2c44" class="">청결도 - {% if cleaness == True%}}★{% else %}☆{% endif %}</p><p id="5bfb2cd9-40ae-45cf-aabd-1c27cbb127b7" class="">빌트인 항목 - {{built_in}}
+
+<div>
+
+	<img src = {{url_for("static", filename=photo)}}>
+
+</div>
+
+</p></div></article></body></html>
