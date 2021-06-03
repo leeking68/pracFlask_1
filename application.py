@@ -49,6 +49,6 @@ def house_info(index):
     cleaness = house_info["cleaness"]
     built_in = house_info["built_in"]
     print(location, cleaness, built_in)
-    return None
+    return render_template("house_info.html", location = location, cleaness = cleaness, built_in = built_in)
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
