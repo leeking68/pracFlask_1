@@ -36,8 +36,19 @@ def upload_done():
 
 @application.route("/list")
 def list():
-    return render_template("list.html")
+    house_list = database.load_list()
+    print(house_list)
+    length = len(house_list)
+    return render_template("list.html", house_list = house_list, length = length)
 
 
+@application.route("/house_info/<int:index>/")
+def house_info(index):
+    house_info = database.load_house(index)
+    location = house_info["location"]
+    cleaness = house_info["cleaness"]
+    built_in = house_info["built_in"]
+    print(location, cleaness, built_in)
+    return None
 if __name__ == "__main__":
     application.run(host='0.0.0.0')
